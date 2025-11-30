@@ -9,6 +9,53 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
+<!-- ===== MODAL GLOBAL DE AUTENTICACIÓN ===== -->
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-modal">
+
+    <!-- Botón cerrar -->
+    <button class="auth-close" id="authClose">✕</button>
+
+    <!-- Login -->
+    <div class="auth-view active" id="view-login">
+      <h2>Iniciar sesión</h2>
+
+      <input type="text" placeholder="Usuario">
+      <input type="password" placeholder="Contraseña">
+
+      <button class="auth-btn">Acceder</button>
+
+      <a class="auth-link" id="goRecover">He olvidado mi contraseña</a>
+      <a class="auth-link" id="goRegister">¿Todavía no tienes cuenta?</a>
+    </div>
+
+    <!-- Registro -->
+    <div class="auth-view" id="view-register">
+      <h2>Crear cuenta</h2>
+
+      <input type="text" placeholder="Usuario">
+      <input type="email" placeholder="Correo electrónico">
+      <input type="password" placeholder="Contraseña">
+      <input type="password" placeholder="Repetir contraseña">
+
+      <button class="auth-btn">Registrarme</button>
+
+      <a class="auth-link" id="backLogin1">¿Ya tienes cuenta?</a>
+    </div>
+
+    <!-- Recuperar -->
+    <div class="auth-view" id="view-recover">
+      <h2>Restablecer contraseña</h2>
+
+      <input type="email" placeholder="Correo asociado">
+      <button class="auth-btn">Enviar enlace</button>
+
+      <a class="auth-link" id="backLogin2">Volver al inicio de sesión</a>
+    </div>
+
+  </div>
+</div>
+
 <body>
 
   <header class="topbar">
