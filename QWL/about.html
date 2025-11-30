@@ -1,156 +1,187 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=1280">
   <title>Sobre nosotros · QWL Aqua</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../QWL/css/abutus.css">
+
+  <link rel="stylesheet" href="../QWL/css/styles.css">
 </head>
+
 <body>
-  
-<header class="topbar">
-  <div class="container">
-<div class="brand">
-  <div class="logo">
-    <img src="assets/Logo_QWL.png" alt="QWL Aqua" class="logo-img">
-  </div>
-  <div>QWL AQUA</div>
-</div>
-    <nav aria-label="Main navigation">
+
+  <header class="topbar">
+
+    <div class="topbar-row container">
+      <div class="brand">
+        <div class="logo">
+          <img src="assets/Logo_QWL.png" alt="QWL Aqua" class="logo-img">
+        </div>
+      </div>
+
+      <h1 class="site-title">QWL AQUA</h1>
+
+      <a class="btn login-btn" id="openLogin" href="#login">Login</a>
+    </div>
+
+    <nav class="topbar-menu">
       <ul>
         <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html" class="active">Contacto</a></li>
         <li><a href="faqs.html">FAQs</a></li>
-        <li><a href="about.html">Sobre nosotros</a></li>
-        <li><a href="contact.html">Contacto</a></li>
       </ul>
     </nav>
-      <a class="btn login-btn" id="openLogin" href="#login">Iniciar sesión</a>
-  </div>
-</header>
 
-  <main class="container">
-    
-<section class="hero">
-  <h2 class="section">¿Quiénes somos?</h2>
-  <div class="grid-2">
-    <div class="panel">
-      <p>Con QWL podrás controlar tu lavandería en remoto, evitando desplazamientos y resolviendo incidencias más rápido.
-      Somos pioneros en domotización de lavanderías autoservicio.</p>
-      <div class="row mt-24">
-        <span class="badge">Sin permanencia</span>
-        <span class="badge">Pagos con tarjeta</span>
-        <span class="badge">Compatible con marcas variadas</span>
-      </div>
-    </div>
-    <div class="panel">
-      <img src="assets/about-photo.png" alt="Lavandería" style="width:100%; border-radius:14px;">
-    </div>
-  </div>
-  <div class="cards mt-24">
-    <div class="card">
-      <h4>Gestión en tiempo real</h4>
-      <p>Abre/cierra, programa horarios, maneja crédito y consulta ciclos.</p>
-    </div>
-    <div class="card">
-      <h4>Promociones y fidelización</h4>
-      <p>Crea campañas, cupones y descuentos desde tu panel.</p>
-    </div>
-    <div class="card">
-      <h4>Compatibilidad</h4>
-      <p>Integra diferentes marcas y sistemas de pago en un único panel.</p>
-    </div>
-  </div>
-</section>
+  </header>
 
-  
-  <div class="overlay" id="authOverlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
-      <header>
-        <h3 id="authTitle">Acceso a QWL Aqua</h3>
-        <button class="close" id="closeAuth" aria-label="Cerrar">&times;</button>
-      </header>
-      <div class="auth-tabs">
-        <button class="tabBtn active" data-target="loginView">Login</button>
-        <button class="tabBtn" data-target="registerView">Registro</button>
-        <button class="tabBtn" data-target="recoverView">Recuperar</button>
-      </div>
-      <div class="content">
-        <div class="auth-view active" id="loginView">
-          <form class="form" id="loginForm">
-            <input class="input" type="text" name="user" placeholder="Usuario" required>
-            <input class="input" type="password" name="pass" placeholder="Contraseña" required>
-            <div class="row" style="justify-content:space-between">
-              <label class="row" style="gap:8px"><input type="checkbox"> Recuérdame</label>
-              <a href="#" id="goRecover">He olvidado mi contraseña</a>
-            </div>
-            <div class="actions">
-              <button class="btn outline" type="button" id="goRegister">Regístrate</button>
-              <button class="btn" type="submit">Entrar</button>
-            </div>
-          </form>
+  <main class="about-wrapper">
+
+    <!-- TÍTULO PRINCIPAL -->
+    <section class="about-header container">
+      <h2 class="about-title">¿Quiénes somos?</h2>
+      <h3 class="about-subtitle">Software y App para tu lavandería autoservicio</h3>
+
+      <div class="about-intro">
+
+        <!-- Imagen izquierda -->
+        <div class="about-photo">
+          <img src="assets/about.png" alt="Lavandería QWL Aqua">
         </div>
-        <div class="auth-view" id="registerView">
-          <form class="form" id="registerForm">
-            <input class="input" type="text" name="user" placeholder="Usuario" required>
-            <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
-            <input class="input" type="password" name="pass" placeholder="Contraseña" required>
-            <input class="input" type="password" name="pass2" placeholder="Repetir contraseña" required>
-            <div class="actions">
-              <button class="btn outline" type="button" data-back="loginView">Cancelar</button>
-              <button class="btn" type="submit">Crear cuenta</button>
-            </div>
-          </form>
+
+        <!-- Texto derecha -->
+        <div class="about-text">
+          <p>
+            Ahorra tiempo y dinero. Fideliza a tus clientes.
+            Con QWL podrás controlar tu lavandería autoservicio en remoto, desde cualquier lugar,
+            evitando desplazamientos innecesarios y resolviendo los contratiempos de tus clientes de forma más rápida.
+            ¡Cientos de lavanderías utilizan nuestro sistema!
+          </p>
+          <p>
+            Además, con nuestra App podrás ofrecer a tus clientes la opción de pagar con tarjeta o bizum,
+            hacer promociones, descuentos ¡y mucho más!
+          </p>
         </div>
-        <div class="auth-view" id="recoverView">
-          <form class="form" id="recoverForm">
-            <input class="input" type="text" name="user" placeholder="Nombre de usuario o correo" required>
-            <p class="hint">Te enviaremos un enlace para restablecer tu contraseña.</p>
-            <div class="actions">
-              <button class="btn outline" type="button" data-back="loginView">Volver</button>
-              <button class="btn" type="submit">Recuperar</button>
-            </div>
-          </form>
+
+      </div>
+    </section>
+
+    <!-- TARJETAS -->
+    <section class="about-features container">
+
+      <div class="feature-card">
+        <h4>Gestiona tu lavandería en tiempo real desde cualquier lugar</h4>
+        <p>
+          Control absoluto de tus máquinas, ciclos y estados en tiempo real.
+          Ahorra desplazamientos y mejora la experiencia de tus clientes.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h4>Compatible con la mayoría de marcas y máquinas</h4>
+        <p>
+          Conecta diferentes tipos de máquina al mismo sistema.
+          Unifica el control y gestión de toda tu lavandería.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h4>Recibe pagos con tarjeta y bizum en tu lavandería</h4>
+        <p>
+          Nuestra App permite a tus clientes pagar fácilmente
+          y tú gestionas todo desde un único panel.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h4>Sin permanencia</h4>
+        <p>
+          No exigimos contratos a largo plazo.
+          Utiliza el sistema con total libertad.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h4>Atención al cliente como valor diferencial</h4>
+        <p>
+          Siempre disponibles para ayudarte.
+          Cientos de lavanderías confían en nuestro soporte.
+        </p>
+      </div>
+
+      <div class="feature-card feature-image">
+        <img src="assets/iphone.png" alt="App QWL en el móvil">
+        <h4>Llévanos contigo</h4>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer-new">
+
+    <div class="footer-top container">
+
+      <!-- Columna 1: Logo + Menú -->
+      <div class="footer-col-1">
+        <img src="assets/Logo_QWL.png" alt="QWL Aqua" class="footer-logo-big">
+
+        <ul class="footer-menu">
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="about.html">Sobre nosotros</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 2: Horario -->
+      <div class="footer-col-2">
+        <h4>Horario</h4>
+        <ul class="hours-list">
+          <li><span>Lunes</span><span>8:30–22:00</span></li>
+          <li><span>Martes</span><span>8:30–22:00</span></li>
+          <li><span>Miércoles</span><span>8:30–22:00</span></li>
+          <li><span>Jueves</span><span>8:30–22:00</span></li>
+          <li><span>Viernes</span><span>8:30–22:00</span></li>
+          <li><span>Sábado</span><span>8:30–22:00</span></li>
+          <li><span>Domingo</span><span>8:30–22:00</span></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Mapa + Redes -->
+      <div class="footer-col-3">
+        <h4>Donde encontrarnos</h4>
+
+        <div class="footer-map">
+          <iframe src="https://www.google.com/maps?q=Calle%20Dr.%20Fleming%2C%2026%2C%2024402%20Ponferrada&output=embed"
+            loading="lazy" allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="footer-social">
+          <a href="#"><img src="assets/ln.png" alt="LinkedIn"></a>
+          <a href="#"><img src="assets/ig.png" alt="Instagram"></a>
+          <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
         </div>
       </div>
-    </div>
-  </div>
 
-</main>
-  
-<footer>
-  <div class="container footer-grid">
-    <div>
-      <h4>Servicio</h4>
-      <p>Sobre nosotros</p>
-      <p>FAQs</p>
     </div>
 
-    <div>
-      <h4>Info legal</h4>
-      <p>Aviso Legal</p>
-      <p>Política de cookies</p>
-      <p>Política de privacidad</p>
-    </div>
-
-    <div>
-      <h4>Horario</h4>
-      <p>Lunes–Domingo</p>
-      <p>8:30–22:00</p>
-    </div>
-  </div>
-
-  <div class="container footer-bottom">
-    <div>© 2025 QWL Aqua. Todos los derechos reservados.</div>
-    <div>
-      <a href="#">Privacidad</a> ·
-      <a href="#">Cookies</a> ·
+    <!-- Franja inferior -->
+    <div class="footer-bottom-new">
+      <a href="#">Políticas de cookies</a>
       <a href="#">Aviso Legal</a>
+      <a href="#">Políticas de privacidad</a>
     </div>
-  </div>
-</footer>
+
+    <div class="footer-copy">
+      © 2025 QWL Aqua. Todos los derechos reservados.
+    </div>
 
 
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>

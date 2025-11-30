@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=1280">
@@ -7,146 +8,164 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  
-<header class="topbar">
-  <div class="container">
-<div class="brand">
-  <div class="logo">
-    <img src="assets/Logo_QWL.png" alt="QWL Aqua" class="logo-img">
-  </div>
-  <div>QWL AQUA</div>
-</div>
-    <nav aria-label="Main navigation">
+
+  <header class="topbar">
+
+    <div class="topbar-row container">
+      <div class="brand">
+        <div class="logo">
+          <img src="assets/Logo_QWL.png" alt="QWL Aqua" class="logo-img">
+        </div>
+      </div>
+
+      <h1 class="site-title">QWL AQUA</h1>
+
+      <a class="btn login-btn" id="openLogin" href="#login">Login</a>
+    </div>
+
+    <nav class="topbar-menu">
       <ul>
         <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html" class="active">Contacto</a></li>
         <li><a href="faqs.html">FAQs</a></li>
-        <li><a href="about.html">Sobre nosotros</a></li>
-        <li><a href="contact.html">Contacto</a></li>
       </ul>
     </nav>
-      <a class="btn login-btn" id="openLogin" href="#login">Iniciar sesión</a>
-  </div>
-</header>
 
-  <main class="container">
-    
-<section class="hero">
-  <h2 class="section">PREGUNTAS FRECUENTES</h2>
-  <div class="grid-2">
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3>¿Qué es QWL Aqua?</h3>
-        <p>Software y App para gestionar tu lavandería autoservicio.</p>
-      </div>
-      <div class="faq-item">
-        <h3>¿Cómo funciona?</h3>
-        <p>Conecta tus máquinas al sistema y contrólalas en tiempo real.</p>
-      </div>
-      <div class="faq-item">
-        <h3>¿Puedo pagar con tarjeta?</h3>
-        <p>Sí, la App admite tarjeta y Bizum.</p>
-      </div>
-      <div class="faq-item">
-        <h3>¿Hay permanencia?</h3>
-        <p>No aplicamos permanencia. Te quedas porque te aporta.</p>
-      </div>
-      <div class="faq-item">
-        <h3>¿Estropeará mi ropa?</h3>
-        <p>Nuestras máquinas están calibradas y mantenidas a diario.</p>
-      </div>
-      <div class="faq-item">
-        <h3>¿Hay descuentos o App?</h3>
-        <p>Promociones y fidelización desde la App para tus clientes.</p>
-      </div>
-    </div>
-    <div class="panel">
-      <img src="assets/faq-photo.png" alt="Clientes en la lavandería" style="width:100%; border-radius:14px;">
-    </div>
-  </div>
-</section>
+  </header>
 
-  
-  <div class="overlay" id="authOverlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
-      <header>
-        <h3 id="authTitle">Acceso a QWL Aqua</h3>
-        <button class="close" id="closeAuth" aria-label="Cerrar">&times;</button>
-      </header>
-      <div class="auth-tabs">
-        <button class="tabBtn active" data-target="loginView">Login</button>
-        <button class="tabBtn" data-target="registerView">Registro</button>
-        <button class="tabBtn" data-target="recoverView">Recuperar</button>
+  <main>
+
+    <div class="faqs-wrapper">
+
+      <h2 class="faq-title">PREGUNTAS FRECUENTES</h2>
+
+      <div class="faq-grid">
+
+        <!-- IMAGEN -->
+        <div>
+          <img src="assets/faq.png" alt="Lavandería" class="faq-photo">
+        </div>
+
+        <!-- LISTA -->
+        <div class="faq-list">
+
+          <div class="faq-item-custom">
+            ¿Qué es QWL Aqua?
+            <div class="faq-bullet"></div>
+            <div class="faq-desc">Es un sistema que digitaliza y automatiza el funcionamiento de lavanderías
+              autoservicio.</div>
+          </div>
+
+          <div class="faq-item-custom">
+            ¿Cómo funciona QWL Aqua?
+            <div class="faq-bullet"></div>
+            <div class="faq-desc">Conecta tus máquinas al panel de control y permite gestionar ciclos, pagos y
+              ocupación.</div>
+          </div>
+
+          <div class="faq-item-custom">
+            ¿Estropearán las lavadoras mi ropa?
+            <div class="faq-bullet"></div>
+            <div class="faq-desc">Las máquinas están calibradas y cuentan con mantenimiento periódico para garantizar un
+              lavado óptimo.</div>
+          </div>
+
+          <div class="faq-item-custom">
+            ¿Puedo pagar con tarjeta?
+            <div class="faq-bullet"></div>
+            <div class="faq-desc">Sí, admitimos pagos con tarjeta, Bizum y monedero virtual de nuestra App.</div>
+          </div>
+
+          <div class="faq-item-custom">
+            ¿Existe algún tipo de permanencia?
+            <div class="faq-bullet"></div>
+            <div class="faq-desc">No exigimos permanencia. Puedes usar el servicio según tus necesidades sin
+              compromisos.</div>
+          </div>
+
+          <div class="faq-item-custom">
+            ¿Existen descuentos en los precios o App móvil?
+            <div class="faq-bullet"></div>
+            <div class="faq-desc">Ofrecemos promociones puntuales y descuentos para usuarios registrados en nuestra
+              aplicación.</div>
+          </div>
+
+        </div>
+
+
       </div>
-      <div class="content">
-        <div class="auth-view active" id="loginView">
-          <form class="form" id="loginForm">
-            <input class="input" type="text" name="user" placeholder="Usuario" required>
-            <input class="input" type="password" name="pass" placeholder="Contraseña" required>
-            <div class="row" style="justify-content:space-between">
-              <label class="row" style="gap:8px"><input type="checkbox"> Recuérdame</label>
-              <a href="#" id="goRecover">He olvidado mi contraseña</a>
-            </div>
-            <div class="actions">
-              <button class="btn outline" type="button" id="goRegister">Regístrate</button>
-              <button class="btn" type="submit">Entrar</button>
-            </div>
-          </form>
-        </div>
-        <div class="auth-view" id="registerView">
-          <form class="form" id="registerForm">
-            <input class="input" type="text" name="user" placeholder="Usuario" required>
-            <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
-            <input class="input" type="password" name="pass" placeholder="Contraseña" required>
-            <input class="input" type="password" name="pass2" placeholder="Repetir contraseña" required>
-            <div class="actions">
-              <button class="btn outline" type="button" data-back="loginView">Cancelar</button>
-              <button class="btn" type="submit">Crear cuenta</button>
-            </div>
-          </form>
-        </div>
-        <div class="auth-view" id="recoverView">
-          <form class="form" id="recoverForm">
-            <input class="input" type="text" name="user" placeholder="Nombre de usuario o correo" required>
-            <p class="hint">Te enviaremos un enlace para restablecer tu contraseña.</p>
-            <div class="actions">
-              <button class="btn outline" type="button" data-back="loginView">Volver</button>
-              <button class="btn" type="submit">Recuperar</button>
-            </div>
-          </form>
-        </div>
+
+    </div>
+
+  </main>
+
+
+ <footer class="footer-new">
+
+  <div class="footer-top container">
+
+    <!-- Columna 1: Logo + Menú -->
+    <div class="footer-col-1">
+      <img src="assets/Logo_QWL.png" alt="QWL Aqua" class="footer-logo-big">
+
+      <ul class="footer-menu">
+        <li><a href="services.html">Servicios</a></li>
+        <li><a href="about.html">Sobre nosotros</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 2: Horario -->
+    <div class="footer-col-2">
+      <h4>Horario</h4>
+      <ul class="hours-list">
+        <li><span>Lunes</span><span>8:30–22:00</span></li>
+        <li><span>Martes</span><span>8:30–22:00</span></li>
+        <li><span>Miércoles</span><span>8:30–22:00</span></li>
+        <li><span>Jueves</span><span>8:30–22:00</span></li>
+        <li><span>Viernes</span><span>8:30–22:00</span></li>
+        <li><span>Sábado</span><span>8:30–22:00</span></li>
+        <li><span>Domingo</span><span>8:30–22:00</span></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: Mapa + Redes -->
+    <div class="footer-col-3">
+      <h4>Donde encontrarnos</h4>
+
+      <div class="footer-map">
+        <iframe 
+          src="https://www.google.com/maps?q=Calle%20Dr.%20Fleming%2C%2026%2C%2024402%20Ponferrada&output=embed"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="footer-social">
+        <a href="#"><img src="assets/ln.png" alt="LinkedIn"></a>
+        <a href="#"><img src="assets/ig.png" alt="Instagram"></a>
+        <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
       </div>
     </div>
+
   </div>
 
-</main>
-  
-<footer>
-  <div class="container footer-inner">
-    <div class="panel">
-      <h3 class="m-0">Horario</h3>
-      <div class="hours mt-16">
-        <div>Lunes</div><div>8:30–22:00</div>
-        <div>Martes</div><div>8:30–22:00</div>
-        <div>Miércoles</div><div>8:30–22:00</div>
-        <div>Jueves</div><div>8:30–22:00</div>
-        <div>Viernes</div><div>8:30–22:00</div>
-        <div>Sábado</div><div>8:30–22:00</div>
-        <div>Domingo</div><div>8:30–22:00</div>
-      </div>
-    </div>
-    <div class="panel">
-      <h2 class="section">Dónde encontrarnos</h2>
-      <div class="map"><iframe title="Mapa QWL Aqua" width="100%" height="220" style="border:0; border-radius:16px;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Calle%20Dr.%20Fleming%2C%2026%2C%2024402%20Ponferrada&output=embed"></iframe></div>
-      <p class="mt-8">Calle Dr. Fleming, 26, Bajo, 24402 Ponferrada, León</p>
-    </div>
+  <!-- Franja inferior -->
+  <div class="footer-bottom-new">
+    <a href="#">Políticas de cookies</a>
+    <a href="#">Aviso Legal</a>
+    <a href="#">Políticas de privacidad</a>
   </div>
-  <div class="container legal">
-    <div>© 2025 QWL Aqua. Todos los derechos reservados.</div>
-    <div><a href="#">Políticas de privacidad</a> · <a href="#">Políticas de cookies</a> · <a href="#">Aviso Legal</a></div>
+
+  <div class="footer-copy">
+    © 2025 QWL Aqua. Todos los derechos reservados.
   </div>
-</footer>
+
 
   <script src="js/app.js"></script>
 </body>
+
 </html>

@@ -67,3 +67,4 @@
     $$(".auth-tabs .tabBtn")[0].click();
   });
 })();
+

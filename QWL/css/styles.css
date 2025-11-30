@@ -1,217 +1,1102 @@
-
-/* QWL Aqua – Desktop-only starter styles */
-:root{
-  --bg-1:#0c1830;           /* navy */
-  --bg-2:#1a2545;           /* navy-2 gradient */
-  --teal:#0aa39a;           /* primary */
-  --teal-600:#08827a;
-  --teal-700:#06665f;
-  --mint:#9ef7e7;
-  --card:#101b35;
-  --text:#e8f2ff;
-  --muted:#a6b3c9;
-  --white:#ffffff;
-  --danger:#e94b5c;
-  --ok:#27d07d;
-  --shadow: 0 12px 30px rgba(0,0,0,.35);
+/* =========================================
+   VARIABLES DE COLOR Y SOMBRAS
+========================================= */
+:root {
+  --bg-1: #0c1830;
+  --bg-2: #1a2545;
+  --teal: #0aa39a;
+  --teal-600: #08827a;
+  --teal-700: #06665f;
+  --mint: #9ef7e7;
+  --card: #101b35;
+  --text: #e8f2ff;
+  --muted: #a6b3c9;
+  --white: #ffffff;
+  --shadow: 0 12px 30px rgba(0, 0, 0, .35);
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
+/* =========================================
+   RESET + STICKY FOOTER
+========================================= */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
-  margin:0;
-  height:100%;
+  display: flex;
+  flex-direction: column;
   font-family: "Poppins", sans-serif;
-  color:var(--text);
+  color: var(--text);
 
   background:
     radial-gradient(900px 700px at 20% 80%, rgba(0, 102, 204, 0.35), transparent 70%),
     radial-gradient(900px 700px at 80% 20%, rgba(0, 74, 165, 0.30), transparent 70%),
     linear-gradient(180deg, #050d1f, #0a152f);
+  
+  background-attachment: fixed;
 }
 
-/* Layout */
-.container{
-  width: 1180px;
-  margin: 0 auto;
-  padding: 0 16px;
+main {
+  flex: 1 0 auto;
 }
-.topbar{
+
+footer {
+  flex-shrink: 0;
+}
+
+/* =========================================
+   TOPBAR — HEADER 2 FILAS ESTABLE
+========================================= */
+
+.topbar {
   background: var(--teal);
   color: var(--white);
-  height: 64px;
   box-shadow: var(--shadow);
-}
-.topbar .container{
-  display:flex; align-items:center; justify-content:space-between; height:100%;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
+  padding: 10px 0 16px;
+  flex-shrink: 0;
 }
 
-/* Contenedor del logo */
-.brand {
+.topbar-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
+  justify-content: space-between;
 }
 
-.brand .logo {
-  width: 55px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  overflow: hidden;
+.site-title {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--white);
 }
 
 .brand .logo-img {
-  width: 100%;
-  height: 100%;
+  width: 55px;
+  height: 55px;
   object-fit: contain;
+}
+
+.login-btn {
+    padding: 8px 26px;             /* Igual que los botones del menú */
+    background: #ffffff;           /* Fondo blanco como los otros */
+    color: #000;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+    box-shadow: none;              /* Igual que los demás */
+    margin-right: 20px;            /* SEPARACIÓN del borde derecho */
+    text-decoration:none;
+}
+
+/* Hover igual que el menú */
+.login-btn:hover {
+    background: #f2f2f2;
+}
+
+/* Opción: botón activo (si algún día lo usas) */
+.login-btn.active {
+    background: #e9fffb;
+    border-color: #00d4b6;
+    box-shadow: 0 0 6px #00d4b6;
+}
+
+/* Menú inferior */
+.topbar-menu {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.topbar-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.topbar-menu ul li a {
+  display: inline-block;
+  padding: 8px 26px;
+  background: #ffffff;
+  color: #000;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+  text-decoration:none;
+}
+
+.topbar-menu ul li a:hover {
+  background: #f2f2f2;
+}
+
+.topbar-menu ul li a.active {
+  background: #e9fffb;
+  border-color: #00d4b6;
+  box-shadow: 0 0 6px #00d4b6;
+}
+
+/* =========================================
+   CONTACTO — LAYOUT + FORMULARIO
+========================================= */
+
+.contact-main,
+.contact-map {
+  max-width: 1180px;
+  margin: 60px auto;
+  padding: 0 16px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.contact-map {
+  flex-direction: column;
+  text-align: center;
+}
+
+.left-image img {
+  width: 480px;
+  border-radius: 24px;
+  object-fit: cover;
   display: block;
 }
 
-
-
-
-
-nav ul{list-style:none; display:flex; gap:22px; padding:0; margin:0}
-nav a{
-  color:var(--white);
-  text-decoration:none;
-  font-weight:600;
-  padding:10px 12px;
-  border-radius:10px;
-}
-nav a:hover{background:rgba(255,255,255,.12)}
-
-.btn{
-  display:inline-block; padding:12px 18px; border-radius:14px;
-  background:var(--teal); color:var(--white); text-decoration:none; font-weight:700;
-  box-shadow: var(--shadow);
-}
-.btn:hover{background:var(--teal-600)}
-.btn.outline{background:transparent; border:2px solid var(--teal); color:var(--teal)}
-.btn.outline:hover{background:rgba(10,163,154,.1)}
-
-/* Hero / Cards */
-.hero{padding:72px 0 36px}
-.hero h1{font-size:42px; line-height:1.1; margin:0 0 8px}
-.hero p{color:var(--muted); font-size:18px; margin:0 0 28px}
-
-.panel{
-  background: rgba(16,27,53,.82);
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:22px;
-  padding:24px;
-  box-shadow: var(--shadow);
+.right-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-/* Footer */
-footer{
-  margin-top:64px;
-  background:linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.35));
-  border-top:1px solid rgba(255,255,255,.06);
-}
-.footer-inner{
-  display:grid; grid-template-columns: 1fr 340px; gap:24px;
-  padding:18px 0 22px;
-}
-.hours{display:grid; grid-template-columns: 1fr 120px; gap:8px; font-size:14px; color:var(--muted)}
-.chart{
-  height:80px; border-radius:12px; background:linear-gradient(90deg, rgba(158,247,231,.12), rgba(10,163,154,.18));
-  display:grid; place-items:center; color:#cfe; font-size:12px; letter-spacing:.6px;
-  border:1px dashed rgba(255,255,255,.2);
-}
-.legal{
-  display:flex; justify-content:space-between; gap:16px; font-size:12px; color:#cbd6f0; padding:12px 0 24px;
-}
-.legal a{color:#cbd6f0; text-decoration:none}
-.legal a:hover{text-decoration:underline}
-
-/* FAQ page */
-.grid-2{display:grid; grid-template-columns: 1.2fr .8fr; gap:24px}
-.faq-list{display:grid; gap:12px}
-.faq-item{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.07); padding:16px 18px; border-radius:14px}
-.faq-item h3{margin:0 0 6px; font-size:18px}
-.faq-item p{margin:0; color:var(--muted)}
-
-/* About cards */
-.cards{display:grid; grid-template-columns: repeat(3, 1fr); gap:18px}
-.card{background:rgba(16,27,53,.82); padding:18px; border-radius:16px; border:1px solid rgba(255,255,255,.06)}
-.card h4{margin:8px 0 6px}
-.card p{margin:0; color:var(--muted)}
-
-/* Contact form */
-.form{display:grid; gap:12px}
-.input, .select, textarea{
-  width:100%; padding:12px 14px; border-radius:12px; background:#0f1a33; color:var(--text); border:1px solid rgba(255,255,255,.12);
-}
-textarea{min-height:120px; resize:vertical}
-.map{
-  height:220px; border-radius:16px; background:linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.08); display:grid; place-items:center; color:#cfe;
+.contact-text h2 {
+  color:#1cd6ca;
+  margin: 0;
+  font-size: 36px;
 }
 
-/* Utility */
-h2.section{margin:8px 0 16px}
-.m-0{margin:0}.mt-8{margin-top:8px}.mt-16{margin-top:16px}.mt-24{margin-top:24px}.mt-32{margin-top:32px}.mt-48{margin-top:48px}
-.row{display:flex; gap:12px; align-items:center}
-.badge{padding:6px 10px; border-radius:10px; background:rgba(10,163,154,.18); border:1px solid rgba(10,163,154,.35); font-size:12px}
-
-
-/* --- Auth modal --- */
-.overlay{
-  position:fixed; inset:0; background:rgba(4,8,20,.55); backdrop-filter: blur(2px);
-  display:none; align-items:center; justify-content:center; z-index:40;
-  transition: opacity .25s ease;
-  opacity:0;
+.form-card {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 24px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
 }
-.overlay.show{display:flex; opacity:1}
 
-.modal{
-  width: 520px; max-width: 92vw;
-  background: var(--card);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius: 22px;
-  box-shadow: var(--shadow);
-  transform: translateY(10px) scale(.98);
+.input, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #0f1a33;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, .12);
+}
+
+.form-btn {
+  margin-top: 12px;
+}
+
+/* =========================================
+   MAPA
+========================================= */
+.map-box {
+
+  margin-top: 20px;
+  border-radius: 24px;
+
+}
+.map-box iframe {
+  width: 120%;       /* sobresale un poco hacia los lados */
+  margin-left: -10%; /* lo centra visualmente */
+}
+
+
+.address {
+  margin-top: 16px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+  background: #15847C;
+  padding: 60px 0 30px;
+  color: #dbe8ff;
+}
+
+.footer-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-col h4,
+.footer-col h3 {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  padding: 0;
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+  opacity: 0.85;
+  font-size: 15px;
+}
+
+.footer-col ul li a {
+  color: #dbe8ff;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  color: #00c4a6;
+}
+
+.footer-logo {
+  width: 70px;
+  margin-bottom: 8px;
+}
+
+/* Parte inferior gris */
+.footer-bottom {
+  background: #6b6868;
+  padding: 20px 0;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: #dbe8ff;
+  text-decoration: none;
+}
+
+/* =========================================
+   FAQ + HOVER INTERPOLATE
+========================================= */
+
+.faqs-wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.faq-photo {
+  width: 100%;
+  border-radius: 18px;
+}
+
+.faq-item-custom {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: transform .25s ease, background .25s ease;
+}
+
+.faq-item-custom:hover {
+  transform: scale(1.025);
+  background: rgba(255,255,255,0.07);
+}
+
+.faq-bullet {
+  width: 22px;
+  height: 22px;
+  background: #0EC7A5;
+  border-radius: 50%;
+}
+
+.faq-desc {
+  max-height: 0;
   opacity: 0;
-  transition: transform .28s ease, opacity .28s ease;
-}
-.overlay.show .modal{transform: translateY(0) scale(1); opacity:1}
-.modal header{
-  display:flex; justify-content:space-between; align-items:center;
-  padding:16px 20px; border-bottom:1px solid rgba(255,255,255,.06)
-}
-.modal header h3{margin:0}
-.modal .content{padding:20px}
-.modal .close{
-  background:transparent; border:0; color:var(--text); font-size:22px; cursor:pointer
+  margin-top: 6px;
+  font-size: 14px;
+  color: #cfe3ff;
+  line-height: 1.35;
+  transition: all .30s ease;
 }
 
-/* auth form */
-.auth-tabs{display:flex; gap:8px; padding:10px 16px; border-bottom:1px solid rgba(255,255,255,.06)}
-.auth-tabs button{
-  padding:10px 12px; border-radius:12px; background:transparent; border:1px solid transparent;
-  color:var(--text); cursor:pointer; font-weight:600;
+.faq-item-custom:hover .faq-desc {
+  max-height: 200px;
+  opacity: 1;
 }
-.auth-tabs button.active{background:rgba(10,163,154,.16); border-color:rgba(10,163,154,.35)}
-.auth-view{display:none}
-.auth-view.active{display:block; animation:fadeIn .25s ease}
-@keyframes fadeIn{from{opacity:0; transform: translateY(6px)} to{opacity:1; transform:none}}
-.form .hint{font-size:12px; color:var(--muted)}
-.form .actions{display:flex; gap:8px; align-items:center; justify-content:flex-end}
+/* ==============================
+   CONTACT PAGE — Replica Mockup
+============================== */
 
-/* topbar login button */
-.login-btn{margin-left:12px; background:#073a37; border:1px solid rgba(255,255,255,.18)}
-.login-btn:hover{background:#0b5c56}
+/* Contenedor principal */
+.contact-wrapper {
+  padding-top: 40px;
+}
+
+/* Bloque superior (imagen + contenido) */
+.contact-main {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  padding: 20px 16px;
+}
+
+/* Imagen izquierda */
+.left-image img {
+  width: 430px;
+  border-radius: 28px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* Columna derecha */
+.right-content {
+  flex: 1;
+}
+
+/* Título CONTACTANOS */
+.contact-text h2 {
+  font-size: 44px;
+  margin: 0 0 10px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Subtítulos */
+.contact-text .subtitle {
+  margin-top: -5px;
+  color: #d5e7ff;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+/* Teléfono y correo */
+.contact-text p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #d9e4ff;
+}
+
+/* Caja del formulario */
+.form-card {
+  margin-top: 25px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 28px;
+  border-radius: 22px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+}
+
+/* Inputs */
+.form-card label {
+  color: #dce7ff;
+  font-size: 15px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.form-card .input,
+.form-card textarea {
+  background: rgba(10, 15, 35, 0.8);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: #e8f2ff;
+}
+
+.form-card textarea {
+  min-height: 130px;
+}
+
+/* Botón enviar */
+.form-btn {
+  margin-top: 12px;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  background: var(--teal);
+  box-shadow: 0 0 12px rgba(0, 255, 220, 0.35);
+}
+
+/* ==============================
+   MAPA — estilo mockup
+============================== */
+
+.contact-map {
+  max-width: 1180px;
+  margin: 80px auto 0;
+  text-align: center;
+  padding: 0 16px;
+}
+
+/* Título del mapa */
+.map-title {
+  font-size: 42px;
+  color: #ffffff;
+  font-weight: 800;
+  margin-bottom: 22px;
+}
+
+/* Caja del mapa */
+.map-box iframe {
+  width: 100%;
+  height: 420px; /* tamaño más grande como en mockup */
+  border-radius: 26px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+/* Dirección */
+.address {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #bcd2ff;
+}
+.contact-map {
+  max-width: 1180px;      /* mismo ancho que la parte superior */
+  margin: 80px auto 0;    /* centrado */
+  padding: 0 16px;        /* mismo padding lateral */
+  text-align: center;
+}
+
+/* El contenedor del iframe ocupa todo */
+.map-box {
+  width: 100%;            /* clave */
+}
+
+/* El iframe se extiende al 100% del contenedor */
+.contact-map iframe {
+  width: 100% !important; /* máximo ancho */
+  height: 420px;          /* aumentamos altura para que se parezca al diseño */
+  border-radius: 24px;
+}
+/* =========================================
+   FAQ PAGE — Diseño basado en estilos globales
+========================================= */
+
+.faqs-wrapper {
+  max-width: 1180px;
+  margin: 60px auto;
+  padding: 0 16px;
+}
+
+/* Título centrado */
+.faq-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* GRID: imagen izquierda + lista derecha */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Imagen */
+.faq-photo {
+  width: 100%;
+  border-radius: 22px;
+  display: block;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+}
+
+/* Elemento FAQ */
+.faq-item-custom {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 16px 18px;
+  border-radius: 16px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #e7f3ff;
+  margin-bottom: 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  cursor: pointer;
+  transition: background .25s ease, transform .25s ease;
+}
+
+/* Hover */
+.faq-item-custom:hover {
+  background: rgba(255, 255, 255, 0.09);
+  transform: scale(1.02);
+}
+
+/* Bolita verde */
+.faq-bullet {
+  width: 22px;
+  height: 22px;
+  background: #00c4a6; /* tu verde */
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(0, 255, 200, .4);
+}
+
+/* Descripción escondida */
+.faq-desc {
+  width: 100%;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #cfe3ff;
+  line-height: 1.35;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  transition: max-height .35s ease, opacity .35s ease;
+}
+
+/* Al pasar el ratón, aparece la explicación */
+.faq-item-custom:hover .faq-desc {
+  max-height: 200px;
+  opacity: 1;
+}
+/* =========================================
+   ABOUT US — Diseño consistente con Contact/FAQs
+========================================= */
+
+/* Contenedor general */
+.about-wrapper,
+.hero {
+  max-width: 1180px;
+  margin: 60px auto;
+  padding: 0 16px;
+}
+
+/* Título */
+.hero .section {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+/* GRID principal: texto izquierda / imagen derecha */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Panel (ya existe, ajusto algunos detalles para que coincida con el diseño) */
+.grid-2 .panel p {
+  font-size: 16px;
+  line-height: 1.55;
+  color: #d0ddf7;
+  margin-bottom: 16px;
+}
+
+/* Imagen derecha */
+.grid-2 .panel img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+}
+
+/* BADGES */
+.row .badge {
+  background: rgba(10, 163, 154, 0.15);
+  border: 1px solid rgba(10, 163, 154, 0.35);
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+/* CARDS INFORMATIVAS */
+.cards {
+  max-width: 1180px;
+  margin: 50px auto 0 auto;
+  padding: 0 16px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.card {
+  background: rgba(16, 27, 53, .82);
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-radius: 18px;
+  padding: 22px;
+  transition: transform .25s ease, background .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.card h4 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.card p {
+  margin: 0;
+  font-size: 15px;
+  color: #cfe3ff;
+}
+/* =========================================
+   NUEVO FOOTER — QWL AQUA
+========================================= */
+
+.footer-new {
+  background: #15847C; /* verde corporativo */
+  color: #ffffff;
+  padding-top: 50px;
+  margin-top: 80px;
+}
+
+/* GRID PRINCIPAL */
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* LOGO */
+.footer-logo-big {
+  width: 85px;
+  margin-bottom: 20px;
+}
+
+/* MENÚ DE LA IZQUIERDA */
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu li {
+  margin: 10px 0;
+}
+
+.footer-menu a {
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.footer-menu a:hover {
+  opacity: 0.85;
+}
+
+/* HORARIO */
+.footer-col-2 h4,
+.footer-col-3 h4 {
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0;
+  font-size: 15px;
+}
+
+/* MAPA */
+.footer-map iframe {
+  width: 100%;
+  height: 140px;
+  border: none;
+  border-radius: 25px;
+ 
+}
+
+/* REDES SOCIALES */
+.footer-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.footer-social img {
+  width: 26px;
+  
+  opacity: 0.85;
+  transition: 0.2s ease;
+}
+
+.footer-social img:hover {
+  opacity: 1;
+}
+
+/* FRANJA INFERIOR */
+.footer-bottom-new {
+  margin-top: 40px;
+  background: #6b6868;
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.footer-bottom-new a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-bottom-new a:hover {
+  text-decoration: underline;
+}
+
+/* COPYRIGHT */
+.footer-copy {
+   color: #ffffff;
+  text-align: center;
+  padding: 10px 0 20px;
+  font-size: 14px;
+  opacity: 0.85;
+  background: #6b6868;
+}
+/* ===============================
+   HERO WELCOME – QWL AQUA
+=============================== */
+
+.hero-welcome {
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+
+.w-hello {
+  color: var(--mint); /* turquesa suave */
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.w-title {
+  color: var(--white);
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.w-subtitle {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+
+  color: var(--teal);
+  text-shadow: 0 0 8px rgba(0, 255, 220, 0.25); /* efecto neon suave */
+}
+/* ===== MODAL ===== */
+
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.auth-overlay.show {
+  display: flex;
+}
+
+.auth-modal {
+  width: 520px;
+  padding: 32px;
+  background: rgba(16,27,53,0.82);
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  position: relative;
+  text-align: center;
+}
+
+/* Botón cerrar */
+.auth-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 22px;
+  background: transparent;
+  color: #c9eaff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Vistas */
+.auth-view {
+  display: none;
+}
+
+.auth-view.active {
+  display: block;
+}
+
+/* Inputs */
+.auth-modal input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: #0f1a33;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  color: #e8f2ff;
+}
+
+/* Botón */
+.auth-btn {
+  width: 100%;
+  padding: 12px 16px;
+  margin-top: 6px;
+  background: #0aa39a;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-btn:hover {
+  background: #08827a;
+}
+
+/* Enlaces */
+.auth-link {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #9ef7e7;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   ABOUT US – Contenedor general
+========================================================= */
+
+.about-wrapper {
+  max-width: 1180px;
+  margin: 60px auto;
+  padding: 0 16px;
+}
+
+
+/* =========================================================
+   TITULOS
+========================================================= */
+
+.about-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  color: #00e0c6;
+  margin-bottom: 10px;
+}
+
+.about-subtitle {
+  text-align: center;
+  font-size: 20px;
+  color: #d4e8ff;
+  margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   SECCIÓN SUPERIOR (Foto + Texto)
+========================================================= */
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+.about-text p {
+  color: #d9e8ff;
+  line-height: 1.55;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+
+
+/* =========================================================
+   FEATURES GRID — 6 tarjetas (3×2)
+========================================================= */
+
+.about-features {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+
+/* =========================================================
+   TARJETAS — Estilo Premium (identico al diseño)
+========================================================= */
+
+.feature-card {
+  background: rgba(12, 25, 45, 0.55);
+  border: 2px solid rgba(0, 255, 220, 0.35);
+  border-radius: 16px;
+  padding: 26px 22px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
+  transition: 0.25s ease;
+  backdrop-filter: blur(4px);
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: #00ffe0;
+  box-shadow: 0 18px 32px rgba(0,255,220,0.22);
+}
+
+.feature-card h4 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #00ffd8;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 15px;
+  color: #cfe4ff;
+  line-height: 1.45;
+  text-align: left;
+}
+
+
+
+/* =========================================================
+   TARJETA ESPECIAL (Llevanos Contigo — con imagen)
+========================================================= */
+
+.feature-image {
+  text-align: center;
+}
+
+.feature-image img {
+  width: 120px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+}
+
+
+/* =========================================================
+   RESPONSIVE 
+========================================================= */
+
+@media (max-width: 1100px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-text p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .about-title {
+    font-size: 34px;
+  }
+
+  .about-subtitle {
+    font-size: 18px;
+  }
+}
+
+
