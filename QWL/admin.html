@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1280">
+	<title>Admin · QWL Aqua</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		.admin-wrapper {
+			max-width: 1180px;
+			margin: 60px auto;
+			padding: 0 16px;
+		}
+
+		.admin-panel {
+			display: grid;
+			grid-template-columns: 480px 1fr;
+			gap: 36px;
+			align-items: start;
+		}
+
+		.admin-card {
+			background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+			border-radius: 18px;
+			padding: 26px;
+			box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+			border: 1px solid rgba(255,255,255,0.04);
+		}
+
+		.admin-welcome h2 {
+			color: #1cd6ca;
+			font-size: 36px;
+			margin: 0 0 12px 0;
+		}
+
+		.pills {
+			display: flex;
+			flex-direction: column;
+			gap: 14px;
+			margin-top: 18px;
+		}
+
+		.pill {
+			background: #ffffff;
+			color: #0a152f;
+			padding: 14px 18px;
+			border-radius: 28px;
+			font-weight: 600;
+			width: 320px;
+			border: 1px solid #e6e6e6;
+		}
+
+		/* Ajustes responsivos simples */
+		@media (max-width: 980px) {
+			.admin-panel { grid-template-columns: 1fr; }
+			.pill { width: 100%; }
+			.left-image img { width: 100%; }
+		}
+	</style>
+</head>
+
+<body>
+
+	<header class="topbar">
+
+		<div class="topbar-row container">
+			<div class="brand">
+				<div class="logo">
+					<img src="assets/Logo_QWL.png" alt="QWL Aqua" class="logo-img">
+				</div>
+			</div>
+
+			<button class="menu-toggle" id="menuToggle">☰</button>
+			<h1 class="site-title">QWL AQUA</h1>
+
+			    <a class="btn login-btn" id="openLogin" href="index.html">Logout</a>
+		</div>
+
+		<nav class="topbar-menu">
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="about.html">About us</a></li>
+				<li><a href="contact.html">Contacto</a></li>
+				<li><a href="faqs.html">FAQs</a></li>
+				<li><a href="admin.html" class="active">Admin</a></li>
+			</ul>
+		</nav>
+
+	</header>
+
+	<main>
+		<section class="admin-wrapper">
+
+			<div class="admin-panel">
+
+				<!-- Imagen / Mockup izquierda -->
+				<div class="left-image admin-card">
+					<h1 class="w-title">¡Bienvenido Marcos!</h1>
+				</div>
+
+				<!-- Panel derecho: bienvenida + indicadores -->
+				<div class="admin-card">
+					<div class="admin-welcome">
+						<p class="w-hello">¡Bienvenido!</p>
+						<p class="w-subtitle">Panel de control — estado de máquinas y facturación</p>
+					</div>
+
+					<div class="pills">
+						<div class="pill">Facturación: 224€</div>
+						<div class="pill">Consumos kW: 42</div>
+						<div class="pill">Clientes atendidos: 18</div>
+					</div>
+
+					<!-- Ejemplo de tarjetas informativas (reusa .card si se quiere) -->
+					<div style="margin-top:22px; display:flex; gap:14px; flex-wrap:wrap;">
+						<div class="card" style="min-width:160px;">Sec 1<br><strong style="color:#00ffd8">Libre</strong></div>
+						<div class="card" style="min-width:160px;">Sec 2<br><strong style="color:#00ffd8">En uso</strong></div>
+						<div class="card" style="min-width:160px;">Sec 3<br><strong style="color:#00ffd8">Mantenimiento</strong></div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+	</main>
+
+	<footer class="footer-new">
+
+		<div class="footer-top container">
+
+			<div class="footer-col-1">
+				<img src="assets/Logo_QWL.png" alt="QWL Aqua" class="footer-logo-big">
+
+				<ul class="footer-menu">
+					<li><a href="services.html">Servicios</a></li>
+					<li><a href="about.html">Sobre nosotros</a></li>
+					<li><a href="faqs.html">FAQs</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col-2">
+				<h4>Horario</h4>
+				<ul class="hours-list">
+					<li><span>Lunes</span><span>8:30–22:00</span></li>
+					<li><span>Martes</span><span>8:30–22:00</span></li>
+					<li><span>Miércoles</span><span>8:30–22:00</span></li>
+				</ul>
+			</div>
+
+			<div class="footer-col-3">
+				<h4>Donde encontrarnos</h4>
+
+				<div class="footer-map">
+					<iframe src="https://www.google.com/maps?q=Calle%20Dr.%20Fleming%2C%2026%2C%2024402%20Ponferrada&output=embed" loading="lazy" allowfullscreen></iframe>
+				</div>
+
+				<div class="footer-social">
+					<a href="#"><img src="assets/ln.png" alt="LinkedIn"></a>
+					<a href="#"><img src="assets/ig.png" alt="Instagram"></a>
+					<a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="footer-bottom-new">
+			<a href="#">Políticas de cookies</a>
+			<a href="#">Aviso Legal</a>
+			<a href="#">Políticas de privacidad</a>
+		</div>
+
+		<div class="footer-copy">© 2025 QWL Aqua. Todos los derechos reservados.</div>
+
+	</footer>
+
+	<script src="js/app.js"></script>
+</body>
+
+</html>

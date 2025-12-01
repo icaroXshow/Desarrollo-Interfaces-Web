@@ -61,10 +61,73 @@ footer {
   flex-shrink: 0;
 }
 
+/* Asegurar que la topbar reciba eventos y esté por delante de capas superpuestas */
+.topbar { position: relative; z-index: 50; }
+
 .topbar-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/* Responsive: convertir topbar a layout móvil */
+/* Botón hamburguesa (oculto en escritorio) */
+.menu-toggle {
+  display: none;
+  width: 40px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 22px;
+}
+
+/* Menú colapsable en mobile */
+.topbar-menu.collapsed {
+  display: none;
+}
+
+@media (max-width: 780px) {
+  .site-title { font-size: 20px; }
+  .brand .logo-img { width: 46px; height:46px; }
+
+  /* mostrar toggle */
+  .menu-toggle { display: block; }
+
+  /* Drawer style: menú deslizable desde la izquierda, como en la maqueta */
+  .topbar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    max-width: 85vw;
+    background: linear-gradient(180deg, var(--teal), var(--teal-600));
+    padding: 84px 20px 20px 20px;
+    box-shadow: 6px 0 30px rgba(0,0,0,0.45);
+    transform: translateX(-110%);
+    transition: transform .28s ease;
+    z-index: 200;
+    display: block;
+  }
+
+  .topbar-menu.open { transform: translateX(0); }
+
+  .topbar-menu ul { flex-direction: column; gap: 18px; align-items: stretch; }
+  .topbar-menu ul li a {
+    padding: 12px 18px;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    text-align: left;
+    border-radius: 10px;
+    font-size: 18px;
+  }
+
+  .topbar-menu ul li a:hover { background: rgba(255,255,255,0.06); }
+
+  .topbar-row { padding: 8px 12px; }
 }
 
 .site-title {
@@ -140,7 +203,12 @@ footer {
 
 .topbar-menu ul li a:hover {
   background: #f2f2f2;
+  cursor: pointer;
+  transform: translateY(-2px);
 }
+
+/* Asegurar que los enlaces del menú estén por encima y reciban clicks */
+.topbar-menu ul li a { position: relative; z-index: 60; }
 
 .topbar-menu ul li a.active {
   background: #e9fffb;
